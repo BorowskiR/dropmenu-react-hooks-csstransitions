@@ -1,24 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import Navbar from './components/NavBar';
+import NavItem from './components/NavItem';
+import DropdownMenu from './components/DropdownMenu';
+
+import { ReactComponent as BellIcon } from './icons/bell.svg';
+import { ReactComponent as MessengerIcon } from './icons/messenger.svg';
+import { ReactComponent as CaretIcon } from './icons/caret.svg';
+import { ReactComponent as PlusIcon } from './icons/plus.svg';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar>
+        <NavItem icon={<PlusIcon />} />
+        <NavItem icon={<BellIcon />} />
+        <NavItem icon={<MessengerIcon />} />
+        <NavItem icon={<CaretIcon />}>
+          <DropdownMenu></DropdownMenu>
+        </NavItem>
+      </Navbar>
     </div>
   );
 }
